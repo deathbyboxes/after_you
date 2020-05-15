@@ -1,0 +1,58 @@
+local gm = require "modules.gm"
+
+function init(self)
+	gm.init()
+	msg.post(".", "acquire_input_focus")
+	self.menu_state = {
+		menu = true,
+		get_players = false,
+		game = false
+	}
+	load_menu(self)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+	elseif message_id == hash("select_players") then
+		unload_menu(self)
+		load_player_select(self)
+	elseif message_id == hash("start_game") then
+		unload_player_select(self)
+		load_game(self)
+	elseif message_id == hash("restart_game") then
+		if message.full_restart then
+			--full reset
+		end
+		unload_game(self)
+		load_game(self)	
+	elseif message_id == hash("end_game") then
+		unload_game(self)
+		load_menu(self)
+	end		
+end
+
+function load_menu (self)
+	msg.post("#menu_proxy", "load")
+end
+
+function unload_menu (self)
+	msg.post("#menu_proxy", "unload")
+end
+
+function load_player_select (self)
+	msg.post("#player_select_proxy", "load")
+end
+
+function unload_player_select (self)
+	msg.post("#player_select_proxy", "unload")
+end
+
+function load_game (self)
+	msg.post("#game_proxy", "load")
+end
+
+function unload_game (self, sender)
+	msg.post("#game_proxy", "unload")
+end

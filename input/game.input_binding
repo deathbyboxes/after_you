@@ -6,3 +6,7 @@ gamepad_trigger {
   input: GAMEPAD_LPAD_DOWN
   action: "reset"
 }
+gamepad_trigger {
+  input: GAMEPAD_START
+  action: "start"
+}
