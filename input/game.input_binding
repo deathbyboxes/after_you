@@ -1,4 +1,8 @@
-mouse_trigger {
-  input: MOUSE_BUTTON_LEFT
-  action: "touch"
+gamepad_trigger {
+  input: GAMEPAD_RTRIGGER
+  action: "walk"
+}
+gamepad_trigger {
+  input: GAMEPAD_LPAD_DOWN
+  action: "reset"
 }

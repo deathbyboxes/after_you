@@ -1,11 +1,30 @@
 images {
   image: "/assets/images/background.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
   image: "/assets/images/logo.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
   image: "/builtins/graphics/particle_blob.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/marker_blk.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/marker_wht.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/p1.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/p2.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
 extrude_borders: 2
