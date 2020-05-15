@@ -1,0 +1,12 @@
+function init(self)
+	--msg.post("#game_proxy", "load")
+	collectionfactory.create("#player_factory")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		-- New world is loaded. Init and enable it.
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+	end
+end
