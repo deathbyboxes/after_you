@@ -15,8 +15,6 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("proxy_loaded") then
 		msg.post(sender, "init")
 		msg.post(sender, "enable")
-	elseif message_id == hash("proxy_unloaded") then
-		msg.post(sender, "final")
 	elseif message_id == hash("select_players") then
 		unload_menu(self)
 		load_player_select(self)

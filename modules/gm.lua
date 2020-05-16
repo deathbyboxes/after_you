@@ -10,28 +10,29 @@ local turn_state = new fsm.create({
 	},
 })
 
-local player_controllers = {
-	player1 = nil,
-	player2 = nil
+M.players = {
+	player1 = {},
+	player2 = {}
 }
 
 function M.init()
-
+	math.randomseed(os.time())
+	math.random();math.random();math.random()
 end
 
 function M.are_players_set()
-	for _,player in pairs(player_controllers) do
-		if player == nil then return false end
+	for _,player in pairs(M.players) do
+		if player.gamepad == nil then return false end
 	end
 	return true
 end
 
-function M.assign_player(action)
-	if player_controllers.player1 == nil then
-		player_controllers.player1 = action.gamepad
+function M.set_controller(action)
+	if M.players.player1.gamepad == nil then
+		M.players.player1.gamepad = action.gamepad
 		return
-	elseif player_controllers.player2 == nil and player_controllers.player1 ~= action.gamepad then
-		player_controllers.player2 = action.gamepad
+	elseif M.players.player2.gamepad == nil and M.players.player1.gamepad ~= action.gamepad then
+		M.players.player2.gamepad = action.gamepad
 		return
 	end
 end

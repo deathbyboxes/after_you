@@ -10,3 +10,7 @@ gamepad_trigger {
   input: GAMEPAD_START
   action: "start"
 }
+gamepad_trigger {
+  input: GAMEPAD_RPAD_DOWN
+  action: "select"
+}

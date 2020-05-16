@@ -1,39 +1,75 @@
 animations {
   id: "player1_idle"
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_00.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00000.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_01.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00001.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_02.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00002.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_03.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00003.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_04.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00004.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_05.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00005.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_06.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00006.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_07.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00007.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player1/Idle-Player1_08.png"
+    image: "/assets/players/Idle-Player1/Idle-Player1_00008.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00009.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00010.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00011.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00012.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00013.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00014.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00015.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00016.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Idle-Player1/Idle-Player1_00017.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -44,67 +80,141 @@ animations {
 animations {
   id: "player1_walking"
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_00.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00000.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_01.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00001.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_02.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00002.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_03.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00003.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_04.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00004.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_05.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00005.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_06.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00006.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_07.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00007.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_08.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00008.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_09.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00009.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_10.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00010.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_11.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00011.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_12.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00012.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_13.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00013.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_14.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00014.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player1/Walk-Player1_15.png"
+    image: "/assets/players/Walk-Player1/Walk-Player1_00015.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "player1_waiting"
+  images {
+    image: "/assets/players/AfterYou-Player1/AfterYou-Player1_00000.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player1/AfterYou-Player1_00001.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player1/AfterYou-Player1_00002.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player1/AfterYou-Player1_00003.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player1/AfterYou-Player1_00004.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player1/AfterYou-Player1_00005.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "player1_lose"
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00000.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00001.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00002.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00003.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00004.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00005.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00006.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00007.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player1/Loss-Player1_00008.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -115,39 +225,39 @@ animations {
 animations {
   id: "player2_idle"
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_00.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00000.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_01.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00001.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_02.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00002.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_03.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00003.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_04.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00004.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_05.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00005.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_06.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00006.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_07.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00007.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Idle-Player2/Idle-Player2_08.png"
+    image: "/assets/players/Idle-Player2/Idle-Player2_00008.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -158,67 +268,141 @@ animations {
 animations {
   id: "player2_walking"
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_00.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00000.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_01.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00001.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_02.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00002.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_03.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00003.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_04.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00004.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_05.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00005.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_06.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00006.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_07.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00007.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_08.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00008.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_09.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00009.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_10.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00010.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_11.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00011.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_12.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00012.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_13.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00013.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_14.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00014.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/players/Walk-Player2/Walk-Player2_15.png"
+    image: "/assets/players/Walk-Player2/Walk-Player2_00015.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "player2_waiting"
+  images {
+    image: "/assets/players/AfterYou-Player2/AfterYou-Player2_00000.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player2/AfterYou-Player2_00001.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player2/AfterYou-Player2_00002.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player2/AfterYou-Player2_00003.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player2/AfterYou-Player2_00004.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/AfterYou-Player2/AfterYou-Player2_00005.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "player2_lose"
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00000.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00001.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00002.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00003.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00004.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00005.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00006.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00007.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/players/Loss-Player2/Loss-Player2_00008.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
