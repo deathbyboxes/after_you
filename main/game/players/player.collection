@@ -61,14 +61,14 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"marker_wht\\\"\\n"
+  "  data: \"tile_set: \\\"/main/branding.atlas\\\"\\n"
+  "default_animation: \\\"player1_pin\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 153.0\n"
+  "    y: 0.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -81,7 +81,7 @@ embedded_instances {
   ""
   position {
     x: 0.0
-    y: 0.0
+    y: 190.0
     z: 0.0
   }
   rotation {

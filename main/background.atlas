@@ -1,5 +1,25 @@
 images {
-  image: "/assets/background/wall.png"
+  image: "/assets/background/Bookshelf.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/background/Clock.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/background/PlantLamp.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/background/Wall.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/background/Window1.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/background/Window2.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {

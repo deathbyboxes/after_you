@@ -3,14 +3,14 @@ gamepad_trigger {
   action: "walk"
 }
 gamepad_trigger {
-  input: GAMEPAD_LPAD_DOWN
-  action: "reset"
-}
-gamepad_trigger {
   input: GAMEPAD_START
   action: "start"
 }
 gamepad_trigger {
   input: GAMEPAD_RPAD_DOWN
   action: "select"
+}
+gamepad_trigger {
+  input: GAMEPAD_RPAD_RIGHT
+  action: "back"
 }

@@ -5,8 +5,16 @@ function init(self)
 	self.max_loc = 1200
 	self.door_spawn = vmath.vector3(0, 360, -0.9)
 	self.player_spawn = vmath.vector3(40, 280, 0)
+	self.move_timer = 5
+	self.time_lapsed = 0
+	self.player_moving = nil
+
+	sprite.set_constant("win_face", "tint", vmath.vector4(1, 1, 1, 0))
+	msg.post("win_face", "disable")
+	go.set_scale(.3, "win_face")
 
 	place_door(self)
+	show_score(self)
 	collectionfactory.load("#player_factory", spawn_players)
 end
 
@@ -15,45 +23,57 @@ function final(self)
 	-- Remove this function if not needed
 end
 
-function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+function on_message(self, message_id, message, sender)
+	if message_id == hash("update_score") then
+		show_score(self)
+	elseif message_id == hash("end_game") then
+		end_game(self, message.winner)
+	end
 end
 
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+function show_score(self)
+	for i = 1, 5 do
+		if gm.score[i] > 0 then
+			sprite.play_flipbook("r"..i, hash("player".. gm.score[i] .. "_score"))
+		end
+	end
 end
 
 function place_door(self)
 	self.door_spawn.x = math.random(self.min_loc, self.max_loc)
 	go.set_position(self.door_spawn, "door")
-	self.finish_line = self.door_spawn.x - 66 -- this is the very edge of the doorframe
+	self.finish_line = self.door_spawn.x - 44 -- this is the very edge of the doorframe
+	gm.door_loc = self.finish_line
 end
 
 function spawn_players(self)
 	local i = 1
-	local x = 0
+	self.player_spawn.x = self.player_spawn.x - 200
+	local player_init_x = self.player_spawn.x + 200
 	for _,player in pairs(gm.players) do
-		self.player_spawn.z = i-1
-		self.player_spawn.x = self.player_spawn.x + x
+		if gm.turn_state:is("player" .. i) then
+			self.player_spawn.y = gm.player_depth.fg.y
+			self.player_spawn.z = gm.player_depth.fg.z
+		else
+			self.player_spawn.y = gm.player_depth.bg.y
+			self.player_spawn.z = gm.player_depth.bg.z
+		end
 		local props = {}
 		props[hash("/body")] = {
 			player_num = i,
-			gamepad_num = player.gamepad
+			gamepad_num = player.gamepad,
+			walk_to = player_init_x
 		}
-		collectionfactory.create("#player_factory", self.player_spawn, go.get_rotation(), props, 1)
+		local ids = collectionfactory.create("#player_factory", self.player_spawn, go.get_rotation(), props, 1)
+		player.ids = ids
+		gm.set_player_loc(i, go.get_world_position(ids[hash("/marker")]))
 		i = i + 1
-		x = x + 10
 	end
 end
 
-function on_input(self, action_id, action)
-	-- Add input-handling code here
-	-- Remove this function if not needed
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
+function end_game(self, winner)
+	msg.post("win_face", "enable")
+	sprite.play_flipbook("win_face", hash("player"..winner.."_score"))
+	go.animate("win_face#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_OUTEXPO, 1)
+	go.animate("win_face", "scale", go.PLAYBACK_ONCE_FORWARD, 2, go.EASING_OUTEXPO, 1)
 end

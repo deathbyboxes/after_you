@@ -3,11 +3,7 @@ local gm = require "modules.gm"
 function init(self)
 	gm.init()
 	msg.post(".", "acquire_input_focus")
-	self.menu_state = {
-		menu = true,
-		get_players = false,
-		game = false
-	}
+	self.restart = false
 	load_menu(self)
 end
 
@@ -15,6 +11,10 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("proxy_loaded") then
 		msg.post(sender, "init")
 		msg.post(sender, "enable")
+	elseif message_id == hash("proxy_unloaded") and sender.fragment == hash("game_proxy") and self.restart then
+		print(sender.fragment)
+		self.restart = false
+		load_game(self)
 	elseif message_id == hash("select_players") then
 		unload_menu(self)
 		load_player_select(self)
@@ -22,15 +22,17 @@ function on_message(self, message_id, message, sender)
 		unload_player_select(self)
 		load_game(self)
 	elseif message_id == hash("restart_game") then
-		if message.full_restart then
-			--full reset
-		end
+		self.restart = true
 		unload_game(self)
-		load_game(self)	
+	elseif message_id == hash("new_game") then
+		self.restart = true
+		gm.full_reset()
+		unload_game(self)
 	elseif message_id == hash("end_game") then
+		package.loaded["gm"] = nil
 		unload_game(self)
 		load_menu(self)
-	end		
+	end			
 end
 
 function load_menu (self)
@@ -38,6 +40,8 @@ function load_menu (self)
 end
 
 function unload_menu (self)
+	msg.post("#menu_proxy", "disable")
+	msg.post("#menu_proxy", "final")
 	msg.post("#menu_proxy", "unload")
 end
 
@@ -46,6 +50,8 @@ function load_player_select (self)
 end
 
 function unload_player_select (self)
+	msg.post("#player_select_proxy", "disable")
+	msg.post("#player_select_proxy", "final")
 	msg.post("#player_select_proxy", "unload")
 end
 
@@ -54,5 +60,7 @@ function load_game (self)
 end
 
 function unload_game (self, sender)
+	msg.post("#game_proxy", "disable")
+	msg.post("#game_proxy", "final")
 	msg.post("#game_proxy", "unload")
 end

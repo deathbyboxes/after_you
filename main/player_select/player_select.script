@@ -22,17 +22,18 @@ function on_input(self, action_id, action)
 		end 
 	else
 		if action_id == hash("select") and action.pressed then
-			assign_player(self, action)
-			if self.is_p1_assigned == false and gm.players.player1 ~= nil then
-				self.is_p1_assigned = true
-				msg.post("player1", "enable")
-				msg.post("player1_spot#ready", "enable")
-				msg.post("player1_spot#join", "disable")
-			elseif self.is_p2_assigned == false and gm.players.player2 ~= nil then
-				self.is_p2_assigned = true
-				msg.post("player2", "enable")
-				msg.post("player2_spot#ready", "enable")
-				msg.post("player2_spot#join", "disable")
+			if gm.set_controller(action) then
+				if self.is_p1_assigned == false and gm.players[1] ~= nil then
+					self.is_p1_assigned = true
+					msg.post("player1", "enable")
+					msg.post("player1_spot#ready", "enable")
+					msg.post("player1_spot#join", "disable")
+				elseif self.is_p2_assigned == false and gm.players[2] ~= nil then
+					self.is_p2_assigned = true
+					msg.post("player2", "enable")
+					msg.post("player2_spot#ready", "enable")
+					msg.post("player2_spot#join", "disable")
+				end
 			end
 		end
 	end

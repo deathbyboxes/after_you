@@ -1,5 +1,8 @@
-go.property("player_num", 2)
+local gm = require "modules.gm"
+
+go.property("player_num", 0)
 go.property("gamepad_num", 0)
+go.property("walk_to", 0)
 
 local colors = {
 	vmath.vector4(0, 145, 179, 1),
@@ -8,9 +11,8 @@ local colors = {
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	sprite.play_flipbook("body#sprite", hash("player".. self.player_num .. "_idle"))
-	msg.post("marker#sprite", "play_animation", {id = hash("marker_wht")})
-	--sprite.set_constant("marker#sprite", "tint", colors[self.player_num])
-	
+	msg.post("marker#sprite", "play_animation", {id = hash("player"..self.player_num.."_pin")})
+		
 	self.init_pos = {
 		player = go.get_position(), 
 		marker = go.get_position("marker")
@@ -19,12 +21,11 @@ function init(self)
 	self.trigger_strength = 0
 	self.moving = false
 	self.animating = false
-	move_marker(self)
+	move_to_start(self)
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
+	msg.post(".", "release_input_focus")
 end
 
 function update(self, dt)
@@ -39,19 +40,62 @@ function update(self, dt)
 	end
 end
 
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+function on_input(self, action_id, action)
+	if gm.turn_state:is("player" .. self.player_num) then
+		if action_id == hash("walk") and action.gamepad == self.gamepad_num then
+			self.moving = true
+			go.cancel_animations("marker", "position.y")
+			move_player(self, action)
+		end
+	elseif gm.turn_state:is("match_end") then
+		if action_id == hash("select") and action.pressed and self.player_num ~= gm.score[gm.match - 1] then
+			local winner = gm.check_score()
+			if winner ~= nil then 
+				gm.turn_state:end_game(winner)
+				return true
+			else
+				if self.player_num == 1 then 
+					move_to_end(self, function() gm.turn_state:resume1() end)
+				else 
+					move_to_end(self, function() gm.turn_state:resume2() end)
+				end
+			end
+		end
+	elseif gm.turn_state:is("game_end") then
+		if action_id == hash("select") and action.pressed then
+			msg.post("main:/loader", "new_game")
+		elseif action_id == hash("back") and action.pressed then
+			msg.post("@system:", "exit", {code = 0})
+		end
+	end
+	
 end
 
-function on_input(self, action_id, action)
-	if action_id == hash("walk") and action.gamepad == self.gamepad_num then
-		self.moving = true
-		go.cancel_animations("marker", "position.y")
-		move_player(self, action)
-	elseif action_id == hash("reset") then 
-		go.set_position(self.init_pos.player)
+function on_message(self, message_id, message)
+	if message_id == hash("cycle_turn") then
+		cycle_turn(self)
+	elseif message_id == hash("end_match") then
+		end_match(self, message.last_player)
+	end	
+end	
+
+function move_to_start(self)
+	go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, self.walk_to, go.EASING_LINEAR, 1, self.player_num / 2, ready)
+	sprite.play_flipbook("body", hash("player".. self.player_num .. "_walking"))
+end
+
+function move_to_end(self, func)
+	if func then
+		go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, 1500, go.EASING_LINEAR, 2, 0, function() func() end)
+	else
+		go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, 1500, go.EASING_LINEAR, 2)
 	end
+	sprite.play_flipbook("body", hash("player".. self.player_num .. "_walking"))
+end
+
+function ready(self)
+	sprite.play_flipbook("body", hash("player".. self.player_num .. "_idle"))
+	move_marker(self)
 end
 
 function move_player(self, action)
@@ -61,6 +105,8 @@ function move_player(self, action)
 		sprite.play_flipbook("body#sprite", hash("player".. self.player_num .. "_idle"))
 		move_marker(self)
 		self.trigger_strength = 0
+		gm.set_player_loc(self.player_num, go.get_world_position("marker"))
+		gm.check_locs()
 	end
 	if self.moving then
 		if self.trigger_strength < action.value then
@@ -69,9 +115,34 @@ function move_player(self, action)
 	end
 end
 
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
+function cycle_turn(self)
+	local pos = go.get_position()
+	if gm.turn_state:is("player" .. self.player_num) then
+		pos.y = gm.player_depth.fg.y
+		pos.z = gm.player_depth.fg.z
+		go.animate("#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_INCIRC, .5)
+		sprite.play_flipbook("body#sprite", hash("player".. self.player_num .. "_idle"))
+	else
+		pos.y = gm.player_depth.bg.y
+		pos.z = gm.player_depth.bg.z
+		go.animate("#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, .5, go.EASING_INCIRC, .5)
+		sprite.play_flipbook("body#sprite", hash("player".. self.player_num .. "_waiting"))
+	end
+	go.set_position(pos)
+end
+
+function end_match(self, player)
+	local pos = go.get_position()
+	if player == "player" .. self.player_num then
+		pos.y = gm.player_depth.fg.y
+		pos.z = gm.player_depth.fg.z
+		sprite.play_flipbook("body#sprite", hash("player".. self.player_num .. "_lose"))
+	else
+		pos.y = gm.player_depth.bg.y
+		pos.z = gm.player_depth.bg.z
+		go.animate("#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_INCIRC, .2, 0, function() move_to_end(self) end)
+	end
+	go.set_position(pos)
 end
 
 function move_marker(self)
@@ -79,4 +150,9 @@ function move_marker(self)
 	local _y = go.get_position("marker").y
 	_y = _y - 15
 	go.animate("marker", "position.y", go.PLAYBACK_LOOP_PINGPONG, _y, go.EASING_INOUTCIRC, 0.8)
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
 end
